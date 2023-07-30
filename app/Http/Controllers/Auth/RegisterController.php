@@ -51,13 +51,19 @@ class RegisterController extends Controller
                 'mail' => $mail,
                 'password' => bcrypt($password),
             ]);
+            $request->session()->put('username', $username);
 
-            return redirect('added');
+            return redirect('added')->with('username',$username);
         }
         return view('auth.register');
     }
+    //登録にかかわるコード
 
     public function added(){
-        return view('auth.added');
+
+    return view('auth.added');
     }
+    //addの画面を開くためのコード
 }
+
+// ->with('username',$username)
