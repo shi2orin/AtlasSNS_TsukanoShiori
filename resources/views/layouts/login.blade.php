@@ -21,19 +21,66 @@
 </head>
 <body>
     <header>
+    <div class ="header-wrap">
         <div id = "head">
-        <h1><a><img src="images/logo.png"></a></h1>
-            <div id="">
-                <div id="">
-                    <p>〇〇さん<img src="images/arrow.png"></p>
-                <div>
-                <ul>
-                    <li><a href="/top">ホーム</a></li>
-                    <li><a href="/profile">プロフィール</a></li>
-                    <li><a href="/logout">ログアウト</a></li>
-                </ul>
-            </div>
+        <h1><a href ='/top'><img src="{{ asset('/images/atlas.png') }}" ></a></h1>
         </div>
+
+
+  <!-- アコーディオンメニュー -->
+  <div class="ac">
+<div class ="ac-label">
+    <p>{{Auth::user()->username}}さん</p>
+    <div class="arrow-wrap"><span class="arrow"></span></div>
+</div>
+<div class="ac-content">
+    <ul class="ac-lists">
+        <li class="ac-lists"><a href="/top">ホーム</a></li>
+        <li class="ac-lists"><a href="/profile">プロフィール</a></li>
+        <li class="ac-lists"><a href="/logout">ログアウト</a></li>
+    </ul>
+</div>
+  </div>
+  <!-- <div class="accordion">
+    <p class="nav-open">{{Auth::user()->username}}さん</p>
+    <div class="arrow-wrap"><span class="arrow"></span></div>
+    <nav>
+        <ul>
+            <li><a href="/top">ホーム</a></li>
+            <li class="navy"><a href="/profile">プロフィール</a></li>
+            <li><a href="/logout">ログアウト</a></li>
+        </ul>
+    </nav>
+ </div>
+</div> -->
+  <!-- Acordion container -->
+ <!-- <div id="accordion" class="accordion-container">
+  <h4 class="accordion-title js-accordion-title">Accordion Title 1</h4>
+  <div class="accordion-content">
+    <p>Accordion content 1</p>
+  </div> -->
+
+
+        <!-- <div id="username">
+            タイトルを名前にする、redmine参考にアイコンの設置、その後も参考にできるか
+                    <p>{{Auth::user()->username}}さん<img src="images/arrow.png"></p>
+                <div>
+            <div id ="accordion-menu">
+                <button type="button" class="menu-btn">
+                <span class="inn"></span>
+                </button>
+                    <nav class="menu">
+                        <ul>
+                            <li><a href="/top">ホーム</a></li>
+                            <li><a href="/profile">プロフィール</a></li>
+                            <li><a href="/logout">ログアウト</a></li>
+                        </ul>
+                    </nav>
+            </div>
+            </div>
+        </div> -->
+
+
     </header>
     <div id="row">
         <div id="container">
@@ -58,7 +105,8 @@
     </div>
     <footer>
     </footer>
-    <script src="JavaScriptファイルのURL"></script>
-    <script src="JavaScriptファイルのURL"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
+
 </body>
 </html>
