@@ -41,45 +41,6 @@
     </ul>
 </div>
   </div>
-  <!-- <div class="accordion">
-    <p class="nav-open">{{Auth::user()->username}}さん</p>
-    <div class="arrow-wrap"><span class="arrow"></span></div>
-    <nav>
-        <ul>
-            <li><a href="/top">ホーム</a></li>
-            <li class="navy"><a href="/profile">プロフィール</a></li>
-            <li><a href="/logout">ログアウト</a></li>
-        </ul>
-    </nav>
- </div>
-</div> -->
-  <!-- Acordion container -->
- <!-- <div id="accordion" class="accordion-container">
-  <h4 class="accordion-title js-accordion-title">Accordion Title 1</h4>
-  <div class="accordion-content">
-    <p>Accordion content 1</p>
-  </div> -->
-
-
-        <!-- <div id="username">
-            タイトルを名前にする、redmine参考にアイコンの設置、その後も参考にできるか
-                    <p>{{Auth::user()->username}}さん<img src="images/arrow.png"></p>
-                <div>
-            <div id ="accordion-menu">
-                <button type="button" class="menu-btn">
-                <span class="inn"></span>
-                </button>
-                    <nav class="menu">
-                        <ul>
-                            <li><a href="/top">ホーム</a></li>
-                            <li><a href="/profile">プロフィール</a></li>
-                            <li><a href="/logout">ログアウト</a></li>
-                        </ul>
-                    </nav>
-            </div>
-            </div>
-        </div> -->
-
 
     </header>
     <div id="row">
@@ -88,7 +49,7 @@
         </div >
         <div id="side-bar">
             <div id="confirm">
-                <p>〇〇さんの</p>
+                <p>{{Auth::user()->username}}さんの</p>
                 <div>
                 <p>フォロー数</p>
                 <p>〇〇名</p>
