@@ -35,6 +35,9 @@ Route::get('/logout', 'Auth\LoginController@logout');
 //ログイン中のページ
 Route::group(['middleware' => 'auth'], function () {
 Route::get('/top','PostsController@index');
+Route::get('/top', 'FollowsController@following');
+Route::get('/top', 'FollowsController@followed');
+
 
 Route::get('/profile','UsersController@profile');
 

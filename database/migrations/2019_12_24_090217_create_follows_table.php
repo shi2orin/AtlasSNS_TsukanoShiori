@@ -11,6 +11,8 @@ class CreateFollowsTable extends Migration
      *
      * @return void
      */
+
+    // protected $table = 'follows';いらないかもと一旦削除
     public function up()
     {
         Schema::create('follows', function (Blueprint $table) {
