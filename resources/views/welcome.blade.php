@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
@@ -7,10 +7,10 @@
 
         <title>Laravel</title>
 
-        <!-- Fonts -->
+        Fonts
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-        <!-- Styles -->
+        Styles
         <style>
             html, body {
                 background-color: #fff;
@@ -92,4 +92,4 @@
             </div>
         </div>
     </body>
-</html>
+</html> -->

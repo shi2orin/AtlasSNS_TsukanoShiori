@@ -23,7 +23,7 @@
     <header>
     <div class ="header-wrap">
         <div id = "head">
-        <h1><a href ='/top'><img src="{{ asset('/images/atlas.png') }}" ></a></h1>
+        <h1><a href ='/index'><img src="{{ asset('/images/atlas.png') }}" ></a></h1>
         </div>
 
 
@@ -52,16 +52,16 @@
                 <p>{{Auth::user()->username}}さんの</p>
                 <div>
                 <p>フォロー数</p>
-                <p>{{ $followings->count() }}名</p>
+
                 </div>
-                <p class="btn"><a href="">フォローリスト</a></p>
+                <p class="btn"><a href="../follows/followList.blade.php">フォローリスト</a></p>
                 <div>
                 <p>フォロワー数</p>
-                <p>{{ $followeds->count() }}名</p>
+
                 </div>
-                <p class="btn"><a href="">フォロワーリスト</a></p>
+                <p class="btn"><a href="../follows/followerList.blade.php">フォロワーリスト</a></p>
             </div>
-            <p class="btn"><a href="">ユーザー検索</a></p>
+            <p class="btn"><a href="../users/search.blade.php">ユーザー検索</a></p>
         </div>
     </div>
     <footer>
