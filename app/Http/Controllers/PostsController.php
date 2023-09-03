@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use \App\Post;
 
 
+
 class PostsController extends Controller
 {
     public function index(){
@@ -16,7 +17,8 @@ class PostsController extends Controller
     //投稿を読み込む
     public function showPosts(){
          $posts = Post::latest()->get();  // <--- 追加
-        return view('posts.index', compact('posts'));
+         $id = Auth::id();
+        return view('posts.index', compact('posts','id'));
     }
 
 // 　　投稿を登録する
@@ -31,5 +33,29 @@ class PostsController extends Controller
         'user_id' => Auth::user()->id,
         'post' => $request->post,
     ]);
+    return redirect('/index');
 }
+
+  public function postEdit(Request $request)
+ {
+    $validator = $request->validate([
+        'editPost' => ['required', 'string', 'max:150'],
+    ]);
+    $id = $request ->input('editId');
+    $post =$request ->input('editPost');
+
+    Post::where('id',$id)->update([
+        'post' =>$post
+    ]);
+     return redirect('/index');
+}
+
+ public function postDelete($id)
+ {
+  Post::where('id', $id)->delete();
+  return redirect('/index');
+ }
+
+// showアクションにボタン表示のid識別入れた、フォロー機能つけてから動作確認
+
 }

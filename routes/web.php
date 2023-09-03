@@ -41,6 +41,10 @@ Route::get('/index','PostsController@index');
 Route::get('/index', 'PostsController@showPosts');
 Route::post('/index', 'PostsController@postTweet');
 
+Route::post('/post/edit', 'PostsController@postEdit');
+Route::get('/post/{id}/delete', 'PostsController@postDelete');
+
+
 Route::get('/profile','UsersController@profile');
 
 Route::get('/search','UsersController@index');

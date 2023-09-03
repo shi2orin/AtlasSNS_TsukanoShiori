@@ -35,7 +35,7 @@
 </div>
 <div class="ac-content">
     <ul class="ac-lists">
-        <li class="ac-lists"><a href="/top">ホーム</a></li>
+        <li class="ac-lists"><a href="/index">ホーム</a></li>
         <li class="ac-lists"><a href="/profile">プロフィール</a></li>
         <li class="ac-lists"><a href="/logout">ログアウト</a></li>
     </ul>
@@ -64,6 +64,7 @@
             <p class="btn"><a href="../users/search.blade.php">ユーザー検索</a></p>
         </div>
     </div>
+    <!-- a hoverでアコーディオンリストを作っているためフォローリストにも反映されている -->
     <footer>
     </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
