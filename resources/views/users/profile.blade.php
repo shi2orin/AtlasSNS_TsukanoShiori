@@ -2,44 +2,40 @@
 
 @section('content')
 
+{!! Form::open(['url' => '/profile','files' => true]) !!}
+{{Form::token()}}
+{{ Form::hidden('id',$user->id) }}
+<div class="profile">
+<img src="{{ asset($user->images) }}"class="profile-icon">
+
 <table class ="profile-list">
   <tr>
-  <td><label>user name</label></td>
-  <td><input type="text" name="username" class="profile-form" value=""></td>
+  <td>{{ Form::label('username') }}</td>
+  <td>{{ Form::input('text','username',$user->username) }}</td>
   </tr>
     <tr>
-  <td><label>mail adress</label></td>
-  <td><input type="text" name="username" class="profile-form" value=""></td>
+  <td>{{ Form::label('mail address') }}</td>
+  <td>{{Form::input('text','mail',$user->mail)}}</td>
   </tr>
     <tr>
-  <td><label>password</label></td>
-  <td><input type="text" name="username" class="profile-form" value=""></td>
+  <td>{{ Form::label('password') }}</td>
+  <td>{{Form::input('password','password')}}</td>
   </tr>
     <tr>
-  <td><label>password comfirm</label></td>
-  <td><input type="text" name="username" class="profile-form" value=""></td>
+  <td>{{ Form::label('password confirm') }}</td>
+  <td>{{Form::input('password','password')}}</td>
   </tr>
     <tr>
-  <td><label>bio</label></td>
-  <td><input type="text" name="username" class="profile-form" value=""></td>
+  <td>{{ Form::label('bio') }}</td>
+  <td>{{Form::input('textarea','bio',$user->bio)}}</td>
   </tr>
     <tr>
-  <td><label>icon image</label></td>
-  <td><input type="text" name="username" class="profile-form" value=""></td>
+  <td>{{ Form::label('icon image') }}</td>
+  <td>{{Form::input('file','images')}}</td>
   </tr>
 </table>
-
-<!-- {!! Form::open(['url' => '/book/update']) !!}
-        <div class="form-group">
-            {{ Form::hidden('id', $book->id) }}
-            {{ Form::label('本のタイトル') }}
-            {{ Form::input('text', 'upTitle', $book->title, ['required', 'class' => 'form-control']) }}
-            {{ Form::label('本の金額') }}
-            {{ Form::input('text', 'upPrice', $book->price, ['required', 'class' => 'form-control']) }}
-        </div>
-        <button type="submit" class="btn btn-primary pull-right">更新</button>
-        {!! Form::close() !!} -->
-
-
+<div class="profile-update">{{Form::submit('更新')}}</div>
+{!!Form::close()!!}
+</div>
 
 @endsection

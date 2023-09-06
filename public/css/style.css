@@ -186,3 +186,30 @@ li {
     border: none;
     background: transparent;
 }
+
+/* ユーザー編集 */
+.profile {
+    display: flex;
+    margin-left: 20%;
+}
+
+.profile-icon {
+    width: 50px;
+    height: 50px;
+    margin: 25px;
+}
+
+.profile-list {
+    margin: 25px;
+}
+
+.profile-list tr td {
+    padding: 10px;
+}
+
+.profile-list input {
+    width: 100%;
+    height: 2rem;
+    margin-left: 30px;
+
+}

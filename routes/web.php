@@ -46,6 +46,8 @@ Route::get('/post/{id}/delete', 'PostsController@postDelete');
 
 
 Route::get('/profile','UsersController@profile');
+Route::post('/profile','UsersController@profileEdit');
+
 
 Route::get('/search','UsersController@index');
 

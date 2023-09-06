@@ -16,12 +16,12 @@
 <ul class ="post-wrapper">
   @foreach($posts as $post)
     <li class ="post-block">
-      <img src ="{{ asset('images/icon1.png')}}" class="postimg">
+      <img src ="{{ asset('Auth::user()->images')}}" class="postimg">
         <div class="post-content">
         <!-- Redmine確認し画像のみ -->
         <!-- 名前記載なし、紐づけ必要 -->
           <div>
-            <div class="post-name">username</div>
+            <div class="post-name">{{Auth::user()->username}}</div>
             <div>{{ $post->created_at }}</div>
           </div>
           <div class="post-text">{{ $post->post }}</div>
