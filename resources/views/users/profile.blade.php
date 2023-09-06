@@ -34,8 +34,9 @@
   <td>{{Form::input('file','images')}}</td>
   </tr>
 </table>
-<div class="profile-update">{{Form::submit('更新')}}</div>
+
 {!!Form::close()!!}
 </div>
+<div class="profile-update">{{Form::submit('更新')}}</div>
 
 @endsection
