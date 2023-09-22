@@ -3,28 +3,33 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// use App\Users;
-// use App\Follow;
+use App\User;
+use App\Post;
+use Auth;
+use App\Follow;
 
 class FollowsController extends Controller
 {
     //
+    public function follow($userId)
+    {
+        Auth::user()->follows()->attach($userId);
+        return redirect('/index');
+    }
+    // フォロー登録して投稿に戻る
 
-    // フォロー・フォロワー数カウント
-// public function following(){
-//   $followings = Follow::where('following_id', \Auth::id())->get();
-//   return view('auth.login', compact('followings'));
-// }
-// // フォロー数＝following_idにある自分のidの数
+        public function unfollow($userId)
+    {
+        Auth::user()->follows()->detach($userId);
+        return redirect('/index');
+    }
+    // フォロー解除、ボタン未実装
 
-// public function followed(){
-//   $followeds = Follow::where('followed_id', \Auth::id())->get();
-//   return view('auth.login', compact('followeds'));
-// }
 
 
 
     public function followList(){
+
         return view('follows.followList');
     }
     public function followerList(){

@@ -2,11 +2,13 @@
 
 @section('content')
 
-{!! Form::open(['url' => '/profile','files' => true]) !!}
+{!! Form::open(['url' => '/profileEdit','files' => true]) !!}
 {{Form::token()}}
 {{ Form::hidden('id',$user->id) }}
 <div class="profile">
 <img src="{{ asset($user->images) }}"class="profile-icon">
+
+<!-- ログインユーザーのアイコンになってしまう -->
 
 <table class ="profile-list">
   <tr>
@@ -23,7 +25,7 @@
   </tr>
     <tr>
   <td>{{ Form::label('password confirm') }}</td>
-  <td>{{Form::input('password','password')}}</td>
+  <td>{{Form::input('password','passwordConfirm')}}</td>
   </tr>
     <tr>
   <td>{{ Form::label('bio') }}</td>
@@ -35,8 +37,18 @@
   </tr>
 </table>
 
-{!!Form::close()!!}
+
 </div>
 <div class="profile-update">{{Form::submit('更新')}}</div>
+{!!Form::close()!!}
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
 @endsection

@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    color: #705c53;
+    color: #000;
     font-size: 1rem;
     font-family: "YuGothic", Yu Gothic, sans-serif;
 }
@@ -13,6 +13,7 @@ body {
 /* header */
 header {
     background: #186AC9;
+    height: 80px;
 }
 
 /* main content */
@@ -28,6 +29,11 @@ header {
 #side-bar {
     flex: 0 0 19%;
     border-left: 1px solid #727272;
+}
+
+.headimg {
+    height: 40px;
+    padding: 20px;
 }
 
 /* アコーディオンメニュー */
@@ -49,6 +55,11 @@ header {
     color: #fff;
     padding: 20px 0;
     margin: 0;
+    display: inline-block;
+}
+
+.ac-icon {
+    height: 30px;
 }
 
 .ac-content {
@@ -114,6 +125,11 @@ header {
 
 
 /* 投稿一覧 */
+
+.post-wrapper {
+    border-top: 6px solid #dcdcdc;
+}
+
 li {
     list-style: none;
     border-bottom: 1px solid #000;
@@ -217,3 +233,64 @@ li {
 .profile-update {
     text-align: center;
 }
+
+/* 検索機能 */
+.search-list {
+    display: flex;
+    margin-left: 20%;
+}
+
+.search-list td {
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.search {
+    display: flex;
+    padding-left: 10%;
+    margin: 40px 40px;
+}
+
+.searchForm {
+    width: 300px;
+    height: 2rem;
+}
+
+.searchbtn {
+    width: 25px;
+    height: 25px;
+}
+
+.search-word {
+    padding: 20px 0 0 50px;
+}
+
+.search-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/*フォローリスト */
+
+.follow-list {
+    display: flex;
+    margin-top: 30px;
+    margin-left: 10%;
+    height: 100px;
+}
+
+.follow-list p {
+
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.follow-icon {
+    padding-left: 50px;
+}
+
+.follow-icon img {
+    padding: 0 20px 20px 0;
+}
+
+/* 他ユーザープロフ */

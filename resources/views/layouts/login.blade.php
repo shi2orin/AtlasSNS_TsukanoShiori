@@ -23,23 +23,25 @@
     <header>
     <div class ="header-wrap">
         <div id = "head">
-        <h1><a href ='/index'><img src="{{ asset('/images/atlas.png') }}" ></a></h1>
+        <h1><a href ='/index'><img src="{{ asset('/images/atlas.png') }}" class="headimg" ></a></h1>
         </div>
 
 
   <!-- アコーディオンメニュー -->
   <div class="ac">
-<div class ="ac-label">
-    <p>{{Auth::user()->username}}さん</p>
-    <div class="arrow-wrap"><span class="arrow"></span></div>
-</div>
-<div class="ac-content">
-    <ul class="ac-lists">
-        <li class="ac-lists"><a href="/index">ホーム</a></li>
-        <li class="ac-lists"><a href="/profile">プロフィール</a></li>
-        <li class="ac-lists"><a href="/logout">ログアウト</a></li>
-    </ul>
-</div>
+    <div class ="ac-label">
+        <p>{{Auth::user()->username}}さん</p>
+        <div class="arrow-wrap"><span class="arrow"></span></div>
+           <img src="{{ asset(Auth::user()->images) }}" class="ac-icon">
+    </div>
+
+    <div class="ac-content">
+        <ul class="ac-lists">
+            <li class="ac-lists"><a href="/index">ホーム</a></li>
+            <li class="ac-lists"><a href="/profile">プロフィール</a></li>
+            <li class="ac-lists"><a href="/logout">ログアウト</a></li>
+        </ul>
+    </div>
   </div>
 
     </header>
@@ -52,16 +54,20 @@
                 <p>{{Auth::user()->username}}さんの</p>
                 <div>
                 <p>フォロー数</p>
-
+                {{ Auth::user()->follows()->get()->count() }}
                 </div>
-                <p class="btn"><a href="../follows/followList.blade.php">フォローリスト</a></p>
+                <p class="btn"><a href="/follow-list">フォローリスト</a></p>
                 <div>
                 <p>フォロワー数</p>
+                {{ Auth::user()->follower()->get()->count() }}
+                <!-- フォロワー表示できない -->
+                <!-- user.phpにフォロー確認のコード追記 -->
+
 
                 </div>
-                <p class="btn"><a href="../follows/followerList.blade.php">フォロワーリスト</a></p>
+                <p class="btn"><a href="/follower-list">フォロワーリスト</a></p>
             </div>
-            <p class="btn"><a href="../users/search.blade.php">ユーザー検索</a></p>
+            <p class="btn"><a href="/search">ユーザー検索</a></p>
         </div>
     </div>
     <!-- a hoverでアコーディオンリストを作っているためフォローリストにも反映されている -->

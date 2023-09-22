@@ -35,8 +35,8 @@ Route::get('/logout', 'Auth\LoginController@logout');
 //ログイン中のページ
 Route::group(['middleware' => 'auth'], function () {
 Route::get('/index','PostsController@index');
-// Route::get('/top', 'FollowsController@following');
-// Route::get('/top', 'FollowsController@followed');
+
+Route::get('/index', 'FollowsController@followed');
 
 Route::get('/index', 'PostsController@showPosts');
 Route::post('/index', 'PostsController@postTweet');
@@ -46,11 +46,24 @@ Route::get('/post/{id}/delete', 'PostsController@postDelete');
 
 
 Route::get('/profile','UsersController@profile');
-Route::post('/profile','UsersController@profileEdit');
+Route::post('/profileEdit','UsersController@profileEdit');
 
 
-Route::get('/search','UsersController@index');
+Route::get('/search','UsersController@list');
+Route::post('/searching','UsersController@search');
 
-Route::get('/follow-list','PostsController@index');
-Route::get('/follower-list','PostsController@index');
+
+Route::post('/follow/{userId}', 'FollowsController@follow');
+Route::post('/unfollow/{userId}', 'FollowsController@unfollow');
+
+Route::get('/follow-list','FollowsController@followList');
+Route::get('/follow-list','PostsController@followPosts');
+
+Route::get('/follower-list','FollowsController@followerList');
+Route::get('/follower-list','PostsController@followerPosts');
+
+Route::get('/user/{id}/profile','UsersController@userProfile');
+
+
+
 });

@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Auth;
+use App\User;
 use \App\Post;
 
 
@@ -16,7 +17,7 @@ class PostsController extends Controller
 
     //投稿を読み込む
     public function showPosts(){
-         $posts = Post::latest()->get();  // <--- 追加
+         $posts = Post::latest()->get();
          $id = Auth::id();
         return view('posts.index', compact('posts','id'));
     }
@@ -56,6 +57,26 @@ class PostsController extends Controller
   return redirect('/index');
  }
 
-// showアクションにボタン表示のid識別入れた、フォロー機能つけてから動作確認
+// フォローリスト
+public function followPosts(){
+// フォローしているユーザーのidを取得、ログインユーザーIDがfollowingカラムにある=そのデータのfollowedのIDをフォローしている
+$following_id = Auth::user()->follows()->pluck('followed_id');
+// フォローしているユーザーのidを元に投稿内容を取得
+$posts = Post::with('user')->whereIn('user_id', $following_id)->get();
+$users = User::whereIn('id', $following_id)->get();
+//   判定したいテーブル名.カラム名,期待される値
+// postテーブルのuser_idカラムが$following_idと同じ->抽出
 
+  return view('follows.followList', compact('posts','users'));
+}
+
+public function followerPosts(){
+
+$followed_id = Auth::user()->follower()->pluck('following_id');
+
+$posts = Post::with('user')->whereIn('user_id', $followed_id)->get();
+$users = User::whereIn('id', $followed_id)->get();
+
+  return view('follows.followerList', compact('posts','users'));
+}
 }
