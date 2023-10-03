@@ -14,17 +14,15 @@ class FollowsController extends Controller
     public function follow($userId)
     {
         Auth::user()->follows()->attach($userId);
-        return redirect('/index');
+        return back();
     }
     // フォロー登録して投稿に戻る
 
         public function unfollow($userId)
     {
         Auth::user()->follows()->detach($userId);
-        return redirect('/index');
+        return back();
     }
-    // フォロー解除、ボタン未実装
-
 
 
 

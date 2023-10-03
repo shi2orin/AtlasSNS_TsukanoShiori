@@ -6,6 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use App\Http\Requests\RegisterFormRequest;
 
 class RegisterController extends Controller
 {
@@ -39,19 +40,20 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    public function register(Request $request){
+    public function register(RegisterFormRequest $request){
         if($request->isMethod('post')){
 
-            $username = $request->input('username');
-            $mail = $request->input('mail');
-            $password = $request->input('password');
+        $username = $request->input('username');
+        $mail = $request->input('mail');
+        $password = $request->input('password');
 
-            User::create([
-                'username' => $username,
-                'mail' => $mail,
-                'password' => bcrypt($password),
-            ]);
-            $request->session()->put('username', $username);
+        User::create([
+            'username' => $username,
+            'mail' => $mail,
+            'password' => bcrypt($password),
+            'images' =>'storage/images/icon1.png'
+        ]);
+        $request->session()->put('username', $username);
 
             return redirect('added')->with('username',$username);
         }

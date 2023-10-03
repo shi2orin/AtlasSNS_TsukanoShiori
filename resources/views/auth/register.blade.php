@@ -1,28 +1,45 @@
 @extends('layouts.logout')
 
+<section class="login-section">
 @section('content')
 <!-- 適切なURLを入力してください -->
 {!! Form::open(['url' => '/register']) !!}
 
-<h2>新規ユーザー登録</h2>
+<div class="login-wrapper">
 
-{{ Form::label('ユーザー名') }}
-{{ Form::text('username',null,['class' => 'input']) }}
+<p>新規ユーザー登録</p>
 
-{{ Form::label('メールアドレス') }}
-{{ Form::text('mail',null,['class' => 'input']) }}
+  <div class="login-form">
+  {{ Form::label('ユーザー名') }}
+  {{ Form::text('username',null,['class' => 'input']) }}
+  </div>
 
-{{ Form::label('パスワード') }}
-{{ Form::text('password',null,['class' => 'input']) }}
+  <div class="login-form">
+  {{ Form::label('メールアドレス') }}
+  {{ Form::text('mail',null,['class' => 'input']) }}
+  </div>
 
-{{ Form::label('パスワード確認') }}
-{{ Form::text('password_confirmation',null,['class' => 'input']) }}
+  <div class="login-form">
+  {{ Form::label('パスワード') }}
+  {{Form::input('password','password')}}
 
-{{ Form::submit('登録') }}
+  </div>
 
-<p><a href="/login">ログイン画面へ戻る</a></p>
+  <div class="login-form">
+  {{ Form::label('パスワード確認') }}
+  {{Form::input('password','passwordConfirm')}}
+  </div>
+
+  <div class="text-end">
+  <button type="submit" class="btn btn-danger">登録</button>
+  </div>
+
+<p class="login-register"><a href="/login">ログイン画面へ戻る</a></p>
 
 {!! Form::close() !!}
+</div>
+
+</section>
 
 
 @endsection

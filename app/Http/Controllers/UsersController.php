@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Auth;
 use App\User;
 use App\Post;
+use App\Http\Requests\RegisterFormRequest;
+
 
 class UsersController extends Controller
 {
@@ -14,16 +16,7 @@ class UsersController extends Controller
         return view('users.profile',compact('user'));
     }
 
-    public function profileEdit(Request $request){
-
-       $validated = $request->validate([
-        'username' =>['required', 'min:2','max:12'],
-        'mail' => ['required','min:5','max:40','email'],
-        'password' => ['required','min:8','max:20','alpha_num'],
-        'passwordConfirm' => ['required','same:password','min:8','max:20'],
-        'bio' => ['max:150','nullable'],
-        'images' => ['max:150','nullable','image','mimes:jpeg,png,jpg'],
-    ]);
+    public function profileEdit(RegisterFormRequest $request){
 
         $id = $request->input('id');
         $username =$request->input('username');

@@ -1,10 +1,81 @@
 @charset "UTF-8";
 
-html{
+html {
     height: 100%;
 }
 
-body{
+body {
     height: 100%;
     background: #186AC9;
+}
+
+header {
+    text-align: center;
+    display: block;
+}
+
+header img {
+    width: 130px;
+}
+
+header p {
+    font-size: 2rem;
+}
+
+section {
+    background-color: #ccd8ff;
+    color: #ffffff;
+    padding: 50px 0;
+    height: 150vh;
+    background-color: #D9AFD9;
+    background-image: linear-gradient(0deg, #409ecc 0%, #a4c1d7 100%);
+}
+
+.login-wrapper {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 30px;
+    background: rgba(105, 105, 105, 0.5);
+    margin: 50px auto;
+    padding: 30px;
+}
+
+.login-wrapper p {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.login-form {
+    margin-bottom: 20px;
+}
+
+label,
+input {
+    width: 250px;
+    display: block;
+}
+
+.text-end {
+    margin-bottom: 20px;
+}
+
+.login-register a {
+    font-size: 1rem;
+    color: #ffffff;
+    text-decoration: none;
+    margin-bottom: 80px;
+}
+
+#clear {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 30px;
+    background: rgba(105, 105, 105, 0.5);
+    margin: 50px auto;
+    padding: 30px 50px;
+}
+
+#clear a {
+    color: #ffffff;
+    text-decoration: none;
 }

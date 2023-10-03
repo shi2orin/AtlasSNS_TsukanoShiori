@@ -2,6 +2,7 @@
 
 html {
     font-size: 16px;
+    width: 100%;
 }
 
 body {
@@ -10,124 +11,39 @@ body {
     font-family: "YuGothic", Yu Gothic, sans-serif;
 }
 
-/* header */
-header {
-    background: #186AC9;
-    height: 80px;
+/* 共有部分 */
+
+#contents {
+
+    max-width: 1024px;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
 }
 
-/* main content */
-#row {
-    display: flex;
-    flex-flow: row wrap;
-}
-
-#container {
-    flex: 0 0 80%;
-}
-
-#side-bar {
-    flex: 0 0 19%;
-    border-left: 1px solid #727272;
-}
-
-.headimg {
+/* アイコンのサイズ */
+.icon {
+    width: 40px;
     height: 40px;
-    padding: 20px;
 }
 
-/* アコーディオンメニュー */
-
-.ac {
-
-    width: 15%;
-    position: absolute;
-    top: 0;
-    right: 0;
+/* 画像のボタン */
+.search button,
+.modal__content,
+.postForm,
+button {
+    border: none;
+    background: transparent;
 }
 
-/* ↑アコーディオン全体 */
-
-.ac-label {
-    cursor: pointer;
-    text-align: center;
-    position: relative;
-    color: #fff;
-    padding: 20px 0;
-    margin: 0;
-    display: inline-block;
+.button-img {
+    width: 40px;
 }
 
-.ac-icon {
-    height: 30px;
-}
-
-.ac-content {
-    display: none;
-    color: #705c53;
-    background-color: #fff;
-    border: 2px solid navy;
-}
-
-.ac-lists {
-    width: 100%;
-    text-align: center;
-
-}
-
-.ac-lists a:hover {
-    display: block;
-    background-color: darkblue;
-    color: #fff;
-}
-
-.arrow-wrap {
-    position: absolute;
-    right: 5px;
-    top: 50%;
-    transform: translatey(-50%);
-    width: 50px;
-    height: 50px;
-}
-
-.arrow {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    color: #fff;
-}
-
-.arrow:before {
-    position: absolute;
-    content: "";
-    transition: all .4s;
-    width: 8px;
-    height: 8px;
-    border: 0px;
-    border-top: solid 2px;
-    border-right: solid 2px;
-    top: 46%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(135deg);
-}
-
-.arrow.open:before {
-    top: 56%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-/* 投稿機能 */
-.postForm {
-    width: 100%;
-    margin: 30px;
-}
-
-
-/* 投稿一覧 */
-
+/* 投稿のリスト表示 */
 .post-wrapper {
     border-top: 6px solid #dcdcdc;
+    padding-left: 0;
 }
 
 li {
@@ -135,12 +51,13 @@ li {
     border-bottom: 1px solid #000;
     display: flex;
     position: relative;
-    padding: 15px;
+    padding: 20px 20px 40px 40px;
+
 }
 
 .post-content {
     width: 100%;
-    padding: 15px;
+    padding: 0 20px 0 20px;
 }
 
 .post-content>div {
@@ -159,13 +76,162 @@ li {
     bottom: 10px;
 }
 
+/* header */
+header {
+    background: #186AC9;
+    height: 80px;
+}
+
+/* main content */
+#row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#container {
+    flex: 0 0 80%;
+}
+
+.headimg {
+    height: 80px;
+    padding: 20px;
+}
+
+/* サイドバー */
+#side-bar {
+    flex: 0 0 19%;
+    border-left: 1px solid #727272;
+}
+
+.confirm {
+    margin: 20px 0 20px 20px;
+}
+
+.side-follow {
+    padding-bottom: 20px;
+}
+
+#side-bar hr {
+    color: #727272;
+}
+
+/* アコーディオンメニュー */
+
+.ac {
+    position: absolute;
+    top: 0;
+    left: 80%;
+    z-index: 100;
+    width: 20%;
+}
+
+.ac-label {
+    display: flex;
+    color: #fff;
+    position: relative;
+    top: 30px;
+    padding-left: 30px;
+}
+
+
+.ac-label img {
+    position: relative;
+    top: -10px;
+    left: 30%;
+}
+
+.ac-content {
+    position: relative;
+    top: 40px;
+    display: none;
+    color: #705c53;
+    background-color: #fff;
+    border: 2px solid navy;
+    font-size: 1.5rem;
+    padding: 0%;
+}
+
+.ac-content ul {
+    padding: 0%;
+    margin-bottom: 0%;
+}
+
+.ac-content li {
+    text-align: center;
+    border: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.ac-content a {
+    display: block;
+    margin: 0;
+    width: 100%;
+    padding: 20px;
+    text-decoration: none;
+    color: #727272;
+}
+
+.ac-content a:hover {
+    background-color: darkblue;
+    color: #fff;
+}
+
+.arrow-wrap {
+    position: absolute;
+    right: 80px;
+    top: 30%;
+    transform: translatey(-50%);
+    width: 50px;
+    height: 50px;
+}
+
+.arrow {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+.arrow:before {
+    position: absolute;
+    content: "";
+    transition: all .4s;
+    width: 10px;
+    height: 10px;
+    border: 0px;
+    border-top: solid 2px;
+    border-right: solid 2px;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.arrow.open:before {
+    top: 56%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* 投稿機能 */
+.postTop {
+    display: flex;
+    padding: 30px;
+}
+
+.postForm {
+    width: 100%;
+    padding-left: 30px;
+}
+
+.postForm textarea {
+    border: none;
+    resize: none;
+    outline: none;
+}
 
 /* 投稿機能モーダル */
-
-.content {
-    margin: 0 auto;
-    padding: 40px;
-}
 
 .modal {
     display: none;
@@ -176,32 +242,40 @@ li {
 }
 
 .modal__bg {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(105, 105, 105);
+    opacity: 0.2;
     height: 100vh;
     position: absolute;
     width: 100%;
 }
 
 .modal__content {
-    background: #fff;
+    background: #ffffff;
     left: 50%;
-    padding: 40px;
+    padding: 30px;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 60%;
 }
 
-.postimg {
-    width: 25px;
-    height: 25px;
-
+.modal__content textarea {
+    margin: 10px 20px;
+    padding-left: 10px;
+    resize: none;
+    width: 90%;
+    height: 8rem;
+    position: relative;
+    border: solid 1px #696969;
 }
 
-.button {
-    border: none;
-    background: transparent;
+.modal__content img {
+    position: absolute;
+    top: 70%;
+    left: 45%;
 }
+
+
 
 /* ユーザー編集 */
 .profile {
@@ -209,9 +283,7 @@ li {
     margin-left: 20%;
 }
 
-.profile-icon {
-    width: 50px;
-    height: 50px;
+.profile img {
     margin: 25px;
 }
 
@@ -235,15 +307,6 @@ li {
 }
 
 /* 検索機能 */
-.search-list {
-    display: flex;
-    margin-left: 20%;
-}
-
-.search-list td {
-    padding-bottom: 20px;
-    padding-left: 20px;
-}
 
 .search {
     display: flex;
@@ -251,46 +314,81 @@ li {
     margin: 40px 40px;
 }
 
+.search-border {
+    border: 3px solid #a9a9a9;
+}
+
 .searchForm {
     width: 300px;
     height: 2rem;
-}
-
-.searchbtn {
-    width: 25px;
-    height: 25px;
 }
 
 .search-word {
     padding: 20px 0 0 50px;
 }
 
-.search-icon {
-    width: 40px;
-    height: 40px;
+.search-list {
+    display: flex;
+    margin-left: 20%;
+}
+
+.search-list td {
+    padding-bottom: 20px;
+    padding-left: 40px;
+}
+
+.search-list button {
+    margin-left: 50%;
+    width: 150px;
 }
 
 /*フォローリスト */
 
 .follow-list {
     display: flex;
-    margin-top: 30px;
-    margin-left: 10%;
+    margin: 20px 50px;
     height: 100px;
 }
 
 .follow-list p {
-
     font-size: 25px;
     font-weight: bold;
+    width: 200px;
 }
 
 .follow-icon {
-    padding-left: 50px;
+    width: 80%;
+    margin-left: 10px;
+    flex-wrap: wrap;
 }
 
 .follow-icon img {
-    padding: 0 20px 20px 0;
+    margin: 0 20px 20px 0;
 }
 
 /* 他ユーザープロフ */
+.user-profile {
+    margin: 30px 30px 0 30px;
+    padding-left: 20px;
+    display: flex;
+    font-size: 1.2rem;
+}
+
+.user-profile table {
+    width: 100%;
+}
+
+
+.user-profile td {
+    padding-left: 60px;
+    padding-bottom: 20px;
+
+}
+
+.user-profile td:nth-child(2) {
+    padding-left: 80px;
+}
+
+.bio-button {
+    text-align: end;
+}
