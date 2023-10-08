@@ -64,6 +64,4 @@ Route::get('/follower-list','PostsController@followerPosts');
 
 Route::get('/user/{id}/profile','UsersController@userProfile');
 
-
-
 });

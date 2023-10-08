@@ -56,19 +56,19 @@
                 <div class="side-follow">
                     <p>フォロー数&emsp;{{ Auth::user()->follows()->get()->count() }}人</p>
                     <div class="text-end">
-                    <a type="button" class="btn btn-primary" href="/follow-list">フォローリスト</a>
+                    <a type="button" class="btn btn-primary side-btn" href="/follow-list">フォローリスト</a>
                     </div>
                 </div>
                 <div class="side-follow">
                     <p>フォロワー数&emsp;{{ Auth::user()->follower()->get()->count() }}人</p>
                     <div class="text-end">
-                    <a type="button" class="btn btn-primary" href="/follower-list">フォロワーリスト</a>
+                    <a type="button" class="btn btn-primary side-btn" href="/follower-list">フォロワーリスト</a>
                     </div>
                 </div>
             </div>
             <hr>
             <div class="text-center">
-            <a type="button" class="btn btn-primary user-search" href="/search">ユーザー検索</a>
+            <a type="button" class="btn btn-primary user-search side-btn" href="/search">ユーザー検索</a>
             </div>
         </section>
     </div>

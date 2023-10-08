@@ -115,6 +115,10 @@ header {
     color: #727272;
 }
 
+.side-btn {
+    width: 150px;
+}
+
 /* アコーディオンメニュー */
 
 .ac {
